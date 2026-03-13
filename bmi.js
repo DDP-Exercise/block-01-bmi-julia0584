@@ -28,11 +28,11 @@
  * Make sure, to help your users understand what they need to type in, by using clear prompt-instructions.
  */
 
-const firstName = prompt("Vorname:");
-const lastName  = prompt("Nachname:");
-const age       = Number(prompt("Alter [Jahre]:"));
-const height    = Number(prompt("Größe [cm]:"));
-const weight    = Number(prompt("Gewicht [kg]:"));
+const firstName= prompt("Vorname:");
+const lastName= prompt("Nachname:");
+const age= Number(prompt("Alter [Jahre]:"));
+const height= Number(prompt("Größe [cm]:"));
+const weight= Number(prompt("Gewicht [kg]:"));
 
 const LINE = "-----------------------------------------------------";
 let bmr, bmi, normal, danger;
