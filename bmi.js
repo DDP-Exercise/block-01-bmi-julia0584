@@ -28,6 +28,12 @@
  * Make sure, to help your users understand what they need to type in, by using clear prompt-instructions.
  */
 
+const firstName = prompt("Vorname:");
+const lastName  = prompt("Nachname:");
+const age       = Number(prompt("Alter [Jahre]:"));
+const height    = Number(prompt("Größe [cm]:"));
+const weight    = Number(prompt("Gewicht [kg]:"));
+
 const LINE = "-----------------------------------------------------";
 let bmr, bmi, normal, danger;
 
@@ -49,8 +55,27 @@ let bmr, bmi, normal, danger;
  * Be careful. Users make typos. Make sure that you have a valid answer before moving on.
  */
 
+let gender = prompt("Geschlecht (male or female):").toLowerCase();
+
+while(gender !== "male" && gender !== "female"){
+    gender = prompt("Eingabe Ungültig! Gib 'male' oder 'female' ein:")
+}
+
 // TODO: To calculate the bmi, use the given formula with all the input you have collected.
+
+if(gender == "male"){
+    bmr = 66 + 14 * weight + 5 * height - 7 * age;
+} else {
+    bmr = 655 + 10 * weight + 2 * height - 6 * age;
+}
+
 // TODO: Once you have the bmi, determine whether or not the weight is normal and if the condition is dangerous.
+
+bmi = (10000 * weight) / (height * height);
+
+normal = bmi >= 18 && bmi <= 25 ? "Yes" : "No"; // "Ist die Bedingung wahr? Dann 'Yes', sonst 'No'"
+danger = bmi < 16 || bmi >= 30  ? "Yes" : "No";
+
 
 /*
  * TODO: Create the correct output from all your data. Make sure to stick to the promised format! NO EXCEPTIONS!
@@ -72,6 +97,16 @@ let bmr, bmi, normal, danger;
  */
 
 console.log(LINE); // Logs the dashed-line.
+console.log("Name: "+lastName.toUpperCase()+", "+firstName);
+console.log(LINE);
+console.log("Alter: "+age+" Jahre");
+console.log("Größe: "+height+" cm");
+console.log("Gewicht: "+weight+" kg");
+console.log("BMR: "+bmr+" kcal");
+console.log("BMI: "+bmi);
+console.log("Normalgewicht? "+normal);
+console.log("Danger? "+danger);
+console.log(LINE);
 
 /*
  * TODO: Make sure to TEST YOUR SOFTWARE! Does it work, when People are smaller than 1 meter? Or taller than 2?
